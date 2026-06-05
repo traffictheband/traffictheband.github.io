@@ -1,4 +1,4 @@
-# TRAFFIC — The Band Website
+# TRAFFIC - The Band Website
 
 Welcome to the repository for the official website of **TRAFFIC**, a Bengal-based rock/blues/alternative/funk/indie band.
 
