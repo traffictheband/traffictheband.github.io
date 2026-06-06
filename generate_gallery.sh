@@ -43,7 +43,7 @@ if [ "$SKIP_THUMBS" = false ] || [ "$SKIP_STRIP" = false ]; then
   elif command -v gm &>/dev/null; then
     CONVERT_CMD="gm convert"
   else
-    echo "⚠ No ImageMagick/GraphicsMagick found — skipping thumbnail generation and metadata stripping."
+    echo "⚠ No ImageMagick/GraphicsMagick found - skipping thumbnail generation and metadata stripping."
     echo "  Install: sudo apt install imagemagick"
     SKIP_THUMBS=true
     SKIP_STRIP=true

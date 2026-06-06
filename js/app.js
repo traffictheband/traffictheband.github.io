@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   if (shimmer) shimmer.remove();
                 }, { once: true });
                 img.addEventListener('error', () => {
-                  // Both failed — show broken placeholder
+                  // Both failed - show broken placeholder
                   showBrokenPlaceholder(img);
                 }, { once: true });
               } else {

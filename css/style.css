@@ -864,7 +864,7 @@ section {
   align-items: start;
 }
 
-/* Instagram panels inside member-page-left — reorderable on mobile */
+/* Instagram panels inside member-page-left - reorderable on mobile */
 .member-page-insta-link,
 .member-page-insta-embed {
   /* No order change on desktop */
@@ -1194,7 +1194,7 @@ footer {
   text-transform: uppercase;
 }
 
-/* Gallery item — with content-visibility for off-screen performance */
+/* Gallery item - with content-visibility for off-screen performance */
 .gallery-item {
   position: relative;
   overflow: hidden;
