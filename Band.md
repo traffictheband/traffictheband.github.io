@@ -35,9 +35,9 @@ With previous television appearances and strong live performance experience, Sho
 Off-stage, he’s the calm force in the middle of musical chaos, until rehearsal starts.
 
 Instagram:
-@*shoumik.biswas*
+```@_shoumik.biswas_```
 
----
+
 
 ## The Creative Engine - Soumyajit Das
 
@@ -62,9 +62,8 @@ Coming from a drama background, Soumyajit understands the psychology of performa
 He’s also the person most likely to turn a simple rehearsal into a full cinematic concept.
 
 Instagram:
-@ami.je.nijei.motto
+```@ami.je.nijei.motto```
 
----
 
 ## The Backbone - Ratnadwip Sarkar
 
@@ -89,9 +88,9 @@ With a strong background in sound engineering, music production, and technology-
 Also known for randomly noodling on guitar during breaks until someone says, “Wait, play that again.”
 
 Instagram:
-@myname_was_snatched
+```@myname_was_snatched```
 
----
+
 
 ## The Heartbeat - Ranit Pal
 
@@ -116,9 +115,9 @@ Deeply interested in technology and technical systems, Ranit brings an analytica
 He’s also the reason rehearsals occasionally become louder than intended.
 
 Instagram:
-@ranitpal77
+```@ranitpal77```
 
----
+
 
 ## The Soul - Sumit Shaw
 
@@ -143,9 +142,9 @@ With deep knowledge of string instruments and musical phrasing, Sumit brings bal
 Usually quiet. Until someone hands him a guitar.
 
 Instagram:
-@sumit_24012
+```@sumit_24012```
 
----
+
 
 ## The Unsung Hero - Himanshu Malik
 
@@ -170,9 +169,9 @@ With strong expertise in networking systems and Dante technologies, Himanshu com
 If something sounds wrong in the mix, he already noticed it five minutes ago.
 
 Instagram:
-@himanshum685
+```@himanshum685```
 
----
+
 
 # What Traffic Represents
 

@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - TRAFFIC</title>
   <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
   <meta name="description" content="View stage and rehearsal gallery captures of Traffic, the Bengal-based rock/blues/alternative band.">
+  <meta name="theme-color" content="#0a0909">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery - TRAFFIC">
+  <meta property="og:description" content="Stage captures, rehearsal shots, and visual moments from Traffic.">
+  <meta property="og:image" content="https://traffictheband.github.io/images/Preview.jpg">
+  <meta property="og:url" content="https://traffictheband.github.io/gallery/">
+  <meta property="og:site_name" content="TRAFFIC">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gallery - TRAFFIC">
+  <meta name="twitter:description" content="Stage captures, rehearsal shots, and visual moments from Traffic.">
+  <meta name="twitter:image" content="https://traffictheband.github.io/images/Preview.jpg">
+  <meta name="twitter:site" content="@traffic_theband">
+
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="gallery">
@@ -45,14 +63,38 @@
       <h1 class="section-title">The <span>Gallery</span></h1>
     </div>
 
-    <!-- The container for dynamic gallery logic -->
+    <!-- Gallery toolbar: counter + filter -->
+    <div id="gallery-toolbar" class="gallery-toolbar animate-on-scroll delay-1" style="display: none;">
+      <div class="gallery-filter-wrap">
+        <input type="text" id="gallery-filter" class="gallery-filter-input" placeholder="Filter by caption..." autocomplete="off" />
+        <span class="gallery-filter-icon">⌕</span>
+      </div>
+      <span id="gallery-count-text" class="gallery-count-text"></span>
+    </div>
+
+    <!-- Dynamic gallery — populated from images/gallery/gallery.json -->
     <div id="gallery-container" class="gallery-grid animate-on-scroll delay-1">
-      <img src="../images/gallery/live-1.jpg" alt="Live Gig Stage">
-      <img src="../images/gallery/rehearsal-1.jpg" alt="Rehearsal Raw Room">
-      <img src="../images/gallery/live-2.jpg" alt="Live Set Performance">
-      <img src="../images/gallery/rehearsal-2.jpg" alt="Jam Session Vibes">
-      <img src="../images/gallery/band-1.jpg" alt="Band Portrait Collision">
-      <img src="../images/gallery/band-2.jpg" alt="Band Silhouette Noise">
+      <!-- Loading spinner shown while fetching manifest -->
+      <div id="gallery-loading" class="gallery-status">
+        <div class="gallery-spinner"></div>
+        <p>Loading gallery...</p>
+      </div>
+    </div>
+
+    <!-- No results from filter -->
+    <div id="gallery-no-results" class="gallery-status" style="display: none;">
+      <p style="color: var(--text-muted); font-size: 0.9rem;">[ no matches found ]</p>
+    </div>
+
+    <!-- Infinite scroll sentinel — triggers loading more images -->
+    <div id="gallery-scroll-sentinel" class="gallery-scroll-sentinel" style="display: none;">
+      <div class="gallery-spinner"></div>
+      <p>Loading more...</p>
+    </div>
+
+    <!-- Empty state shown when no images found -->
+    <div id="gallery-empty" class="gallery-status" style="display: none;">
+      <p style="color: var(--text-muted); font-size: 0.9rem;">[ no images found ]</p>
     </div>
   </main>
 
@@ -61,9 +103,21 @@
     <span class="lightbox-close">&times;</span>
     <span class="lightbox-prev">&#10094;</span>
     <span class="lightbox-next">&#10095;</span>
+    <!-- Lightbox loading spinner -->
+    <div id="lightbox-loader" class="lightbox-loader">
+      <div class="gallery-spinner lightbox-spinner"></div>
+    </div>
     <img class="lightbox-content" id="lightbox-img" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <div class="lightbox-bottom-bar">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+      <div id="lightbox-counter" class="lightbox-counter"></div>
+    </div>
   </div>
+
+  <!-- Back to top FAB -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <span>↑</span>
+  </button>
 
   <!-- Footer -->
   <footer>
