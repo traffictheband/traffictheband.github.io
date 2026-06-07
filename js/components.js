@@ -5,7 +5,8 @@ const TRAFFIC_LINKS = {
     twitter: "https://x.com/traffic_theband",
     youtube: "https://www.youtube.com/@traffic.theband",
     facebook: "https://www.facebook.com/traffic.theband",
-    email: "traffic.music.contact@gmail.com"
+    email: "traffic.music.contact@gmail.com",
+    phone: "+91 93328 48935"
   },
   members: {
     "shoumik-biswas": {
@@ -68,6 +69,7 @@ const TRAFFIC_LINKS = {
               <li><a href="#about">About</a></li>
               <li><a href="#members">Members</a></li>
               <li><a href="gallery/">Gallery</a></li>
+              <li><a href="contact/">Contact</a></li>
               <li><a href="#socials">Socials</a></li>
             </ul>
           </nav>
@@ -90,6 +92,29 @@ const TRAFFIC_LINKS = {
               <li><a href="${prefix}">Home</a></li>
               <li><a href="${prefix}#members">Members</a></li>
               <li><a href="./" class="active">Gallery</a></li>
+              <li><a href="${prefix}contact/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      `;
+    } else if (pageType === 'contact') {
+      headerHTML = `
+        <div class="container nav-container">
+          <a href="${prefix}" class="logo-link">
+            <img src="${prefix}images/logo.png" alt="Traffic Logo" class="logo-img">
+            <div class="logo-text">TRAF<span>F</span>IC // CONTACT</div>
+          </a>
+          <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav>
+            <ul>
+              <li><a href="${prefix}">Home</a></li>
+              <li><a href="${prefix}#members">Members</a></li>
+              <li><a href="${prefix}gallery/">Gallery</a></li>
+              <li><a href="./" class="active">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -140,8 +165,14 @@ const TRAFFIC_LINKS = {
           </div>
 
           <div class="footer-right">
-            <div class="footer-links-title">Official Links</div>
+            <div class="footer-links-title">Contact</div>
             <div class="links-grid">
+              <a href="mailto:${TRAFFIC_LINKS.band.email}" class="social-icon-link" style="grid-column: span 2;">
+                <span>//</span> ${TRAFFIC_LINKS.band.email}
+              </a>
+              <a href="tel:${TRAFFIC_LINKS.band.phone}" class="social-icon-link" style="grid-column: span 2;">
+                <span>//</span> ${TRAFFIC_LINKS.band.phone}
+              </a>
               <a href="${TRAFFIC_LINKS.band.instagram}" target="_blank" class="social-icon-link">
                 <span>//</span> Instagram
               </a>
@@ -154,14 +185,18 @@ const TRAFFIC_LINKS = {
               <a href="${TRAFFIC_LINKS.band.facebook}" target="_blank" class="social-icon-link">
                 <span>//</span> Facebook
               </a>
-              <a href="mailto:${TRAFFIC_LINKS.band.email}" class="social-icon-link" style="grid-column: span 2;">
-                <span>//</span> Email: ${TRAFFIC_LINKS.band.email}
-              </a>
             </div>
           </div>
         </div>
       `;
     } else if (pageType === 'gallery') {
+      footerHTML = `
+        <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+          <p>TRAFFIC - The Band // Visual Showcase</p>
+          <p style="margin-top: 5px;"><a href="${prefix}" style="color: var(--accent-amber); text-decoration: none;">&lt;- Back to home directory</a></p>
+        </div>
+      `;
+    } else if (pageType === 'contact') {
       footerHTML = `
         <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">
           <p>TRAFFIC - The Band // Visual Showcase</p>

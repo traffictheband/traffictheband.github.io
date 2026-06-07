@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Sent — TRAFFIC</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
+  <meta name="description" content="Your message was sent to TRAFFIC. Redirecting to the homepage shortly.">
+  <meta name="theme-color" content="#0a0909">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="contact" style="overflow:hidden; min-height:100vh;">
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+
+  <header></header>
+
+  <main>
+    <section class="section contact-section">
+      <div class="container">
+        <div class="glass-panel" style="max-width: 680px; margin: 0 auto; text-align: center;">
+          <h2 class="section-title" style="margin-bottom: 20px;">Message Sent</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 24px; line-height: 1.8;">
+            Thanks for reaching out. Your message has been delivered to TRAFFIC's contact inbox.
+          </p>
+          <p style="font-size: 1rem; color: var(--accent-amber); margin-bottom: 16px;">Redirecting to the homepage in <span id="countdown">10</span> seconds.</p>
+          <a href="../" class="btn btn-secondary" style="display: inline-flex;">Go back now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let seconds = 10;
+    const countdown = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      seconds -= 1;
+      countdown.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = '../';
+      }
+    }, 1000);
+  </script>
+  <script src="../js/components.js"></script>
+</body>
+</html>

@@ -148,6 +148,126 @@ body::before {
   box-shadow: 0 8px 32px 0 rgba(255, 95, 0, 0.05), inset 0 0 12px rgba(255, 95, 0, 0.03);
 }
 
+/* Contact Page */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.05fr) minmax(320px, 1.45fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-grid h3 {
+  margin-top: 0;
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  margin-top: 20px;
+}
+
+.card-marker {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 95, 0, 0.14);
+  color: var(--accent-amber);
+  font-size: 1.1rem;
+}
+
+.card-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.contact-link,
+.social-links-grid a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.social-links-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.social-links-grid a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform var(--transition-speed), border-color var(--transition-speed), background var(--transition-speed);
+}
+
+.social-links-grid a:hover {
+  border-color: var(--accent-amber);
+  transform: translateX(2px);
+  background: rgba(255, 95, 0, 0.08);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 16px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+  margin-top: 8px;
+}
+
+.contact-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 0 3px rgba(255, 95, 0, 0.1);
+}
+
+.contact-form .form-note {
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contact-form button {
+  width: 100%;
+  justify-content: center;
+}
+
 /* Header & Navigation */
 header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -1593,13 +1713,17 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-  .about-grid, .social-layout, .member-page-grid, .footer-grid {
+  .about-grid, .social-layout, .member-page-grid, .footer-grid, .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-links-grid a {
+    width: 100%;
   }
   
   /* Member page: restructure to photo → bio → instagram on mobile */
