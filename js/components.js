@@ -69,7 +69,6 @@ const TRAFFIC_LINKS = {
               <li><a href="#about">About</a></li>
               <li><a href="#members">Members</a></li>
               <li><a href="gallery/">Gallery</a></li>
-              <li><a href="contact/">Contact</a></li>
               <li><a href="#socials">Socials</a></li>
             </ul>
           </nav>
@@ -92,29 +91,6 @@ const TRAFFIC_LINKS = {
               <li><a href="${prefix}">Home</a></li>
               <li><a href="${prefix}#members">Members</a></li>
               <li><a href="./" class="active">Gallery</a></li>
-              <li><a href="${prefix}contact/">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      `;
-    } else if (pageType === 'contact') {
-      headerHTML = `
-        <div class="container nav-container">
-          <a href="${prefix}" class="logo-link">
-            <img src="${prefix}images/logo.png" alt="Traffic Logo" class="logo-img">
-            <div class="logo-text">TRAF<span>F</span>IC // CONTACT</div>
-          </a>
-          <button class="menu-toggle" aria-label="Toggle Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <nav>
-            <ul>
-              <li><a href="${prefix}">Home</a></li>
-              <li><a href="${prefix}#members">Members</a></li>
-              <li><a href="${prefix}gallery/">Gallery</a></li>
-              <li><a href="./" class="active">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -190,13 +166,6 @@ const TRAFFIC_LINKS = {
         </div>
       `;
     } else if (pageType === 'gallery') {
-      footerHTML = `
-        <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">
-          <p>TRAFFIC - The Band // Visual Showcase</p>
-          <p style="margin-top: 5px;"><a href="${prefix}" style="color: var(--accent-amber); text-decoration: none;">&lt;- Back to home directory</a></p>
-        </div>
-      `;
-    } else if (pageType === 'contact') {
       footerHTML = `
         <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">
           <p>TRAFFIC - The Band // Visual Showcase</p>
