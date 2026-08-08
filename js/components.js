@@ -25,10 +25,6 @@ const TRAFFIC_LINKS = {
       instagram: "https://www.instagram.com/ranitpal77/",
       handle: "@ranitpal77"
     },
-    "sumit-shaw": {
-      instagram: "https://www.instagram.com/sumit_24012/",
-      handle: "@sumit_24012"
-    },
     "himanshu-malik": {
       instagram: "https://www.instagram.com/himanshum685/",
       handle: "@himanshum685"
@@ -36,7 +32,7 @@ const TRAFFIC_LINKS = {
   }
 };
 
-(function() {
+(function () {
   // 1. Detect relative prefix to root folder based on the components.js script tag src attribute
   const scriptTag = document.querySelector('script[src*="components.js"]');
   const srcAttr = scriptTag ? scriptTag.getAttribute('src') : '';
@@ -186,14 +182,14 @@ const TRAFFIC_LINKS = {
   // 5. Inject member profile-specific socials dynamically (only on profile pages)
   if (pageType === 'member' && memberId && TRAFFIC_LINKS.members[memberId]) {
     const info = TRAFFIC_LINKS.members[memberId];
-    
+
     // Update Instagram button link
     const instaBtn = document.querySelector('.member-insta-btn');
     if (instaBtn) {
       instaBtn.setAttribute('href', info.instagram);
       instaBtn.textContent = info.handle;
     }
-    
+
     // Update Instagram iframe
     const instaIframe = document.querySelector('.member-insta-iframe');
     if (instaIframe) {
@@ -205,7 +201,7 @@ const TRAFFIC_LINKS = {
   if (pageType === 'home') {
     const timestampContainer = document.querySelector('.commit-timestamp');
     const repo = "traffictheband/traffictheband.github.io";
-    
+
     // Static Fallback
     const setFallback = () => {
       if (timestampContainer) {
@@ -237,7 +233,7 @@ const TRAFFIC_LINKS = {
             const shortSha = commit.sha.substring(0, 7);
             const commitUrl = commit.html_url;
             const commitDate = new Date(commit.commit.committer.date);
-            
+
             const pad = (num) => String(num).padStart(2, '0');
             const day = pad(commitDate.getDate());
             const month = pad(commitDate.getMonth() + 1);
@@ -245,9 +241,9 @@ const TRAFFIC_LINKS = {
             const hours = pad(commitDate.getHours());
             const minutes = pad(commitDate.getMinutes());
             const seconds = pad(commitDate.getSeconds());
-            
+
             const formattedDate = `${day}.${month}.${year} - ${hours}:${minutes}:${seconds}`;
-            
+
             if (timestampContainer) {
               timestampContainer.innerHTML = `Last Updated - ${formattedDate} &bull; <a href="${commitUrl}" target="_blank" style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">${shortSha}</a>`;
             }
